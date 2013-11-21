@@ -1,0 +1,33 @@
+{
+  "name": "rubies",
+  "description": "Installs different Ruby versions, chruby for switching and any gems required",
+  "long_description": "# rubies cookbook\n\nThis cookbook installs different ruby versions using ruby-install (https://github.com/postmodern/ruby-install), installs chruby (https://github.com/postmodern/chruby) for switching between rubies and optionally installs Bundler under those rubies.\n\nMy plan is to expand this to be able to specify a list of gems to install under all rubies, a list of gems for each ruby version and a LWRP for installing gems under each ruby version.\n\nAlso to do is to add tests.\n\n\n# Requirements\n\nThe following cookbooks are required:\n\n**build_essential** - install the required build tools & compilers - https://github.com/opscode-cookbooks/build-essential\n\n**chruby_install** - install chruby. Not currently on the community site, but available here: https://github.com/ichilton/chef_chruby_install\n\n**ruby_install** - install rubies using ruby-install - https://github.com/rosstimson/chef-ruby_install\n\n**Currently only tested on Ubuntu 12.04**\n\nThe included Vagrantfile requires the vagrant-berkshelf and vagrant-omnibus plugins:\n\n    vagrant plugin install vagrant-berkshelf\n    vagrant plugin install vagrant-omnibus\n\n\n# Usage\n\nSet attributes in your attributes file, such as:\n\n    default[:rubies][:list] = [ 'ruby 1.9.3-p194', 'ruby 2.0.0-p195' ]\n    default[:rubies][:install_bundler] = true\n\nInclude the rubies default recipe (or include rubies in your run list):\n\n    include_recipe 'rubies'\n\n\n# Attributes\n\n**node[:rubies][:list]** - array of ruby types/versions to install (defaults to: [ 'ruby 2.0.0-p195' ])\n\n**node[:rubies][:install_bundler]** - boolean specifying whether to install bundler under each ruby version (defaults to: true). Note that this currently only works if you are listing full ruby versions (eg: 'ruby 2.0.0-p195').\n\nThe bundler install will not currently work with partial version numbers (eg: \"ruby-install ruby\" or \"ruby-install ruby 1.9.3\"), despite ruby-install supporting it. I'm working with Ross on support in the chef_ruby-install cookbook for this.\n\nNote the attributes in the chruby_install cookbook (https://github.com/ichilton/chef_chruby_install) which you can set, for example setting the default ruby.\n\n\n# Recipes\n\ndefault\n\n\n# Author\n\nAuthor:: Ian Chilton (<ian@ichilton.co.uk>)\n",
+  "maintainer": "Ian Chilton",
+  "maintainer_email": "ian@ichilton.co.uk",
+  "license": "All rights reserved",
+  "platforms": {
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+    "build-essential": ">= 0.0.0",
+    "chruby_install": ">= 0.0.0",
+    "ruby_install": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0"
+}

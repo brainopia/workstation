@@ -1,0 +1,19 @@
+source /usr/local/share/chruby/chruby.sh
+<% if node[:chruby_install][:use_embedded] && ::File.exists?("/opt/chef/embedded/bin/ruby") -%>
+RUBIES+=(/opt/chef/embedded)
+<% end -%>
+<% if node[:chruby_install][:use_rvm] && ! Dir["~/.rubies/*"].empty? -%>
+RUBIES+=($HOME/.rvm/rubies/*)
+<% end -%>
+<% if node[:chruby_install][:use_rbenv] && ! Dir["~/.rbenv/versions/*"].empty? -%>
+RUBIES+=($HOME/.rbenv/rubies/*)
+<% end -%>
+<% if node[:chruby_install][:use_rbfu] && ! Dir["~/.rbfu/rubies/*"].empty? -%>
+RUBIES+=($HOME/.rbfu/rubies/*)
+<% end -%>
+<% if ::File.exists?("/opt/chef/embedded") and node[:chruby_install][:default_ruby] == "embedded" -%>
+chruby embedded
+<% elsif node[:chruby_install][:default_ruby] -%>
+chruby <%= node[:chruby_install][:default_ruby] %>
+<% end -%>
+<%= node[:chruby_install][:auto] && "source /usr/local/share/chruby/auto.sh" %>

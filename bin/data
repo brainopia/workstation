@@ -1,0 +1,12 @@
+#!/bin/sh
+
+echo -n "Enter password (if needed): "
+read -s password
+
+if [ -z "$password" ]
+then
+  knife solo data bag -c config/solo.rb $@
+else
+  knife solo data bag -c config/solo.rb $@ --secret $password 
+fi
+

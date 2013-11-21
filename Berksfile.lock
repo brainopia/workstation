@@ -1,0 +1,25 @@
+{
+  "sources": {
+    "rubies": {
+      "locked_version": "0.1.0"
+    },
+    "build-essential": {
+      "locked_version": "1.4.2"
+    },
+    "chruby_install": {
+      "locked_version": "0.1.1"
+    },
+    "ruby_install": {
+      "locked_version": "0.1.0"
+    },
+    "ark": {
+      "locked_version": "0.4.0"
+    },
+    "apt": {
+      "locked_version": "2.3.0"
+    },
+    "yum": {
+      "locked_version": "2.4.2"
+    }
+  }
+}

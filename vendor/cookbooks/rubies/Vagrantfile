@@ -1,0 +1,16 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.vm.hostname = "rubies-berkshelf"
+  config.vm.box = "precise-server-cloudimg-amd64-vagrant-disk1"
+  config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/precise/current/precise-server-cloudimg-amd64-vagrant-disk1.box"
+  config.vm.network :private_network, ip: "10.200.200.203"
+  config.berkshelf.enabled = true
+  config.omnibus.chef_version = :latest
+
+  config.vm.provision :chef_solo do |chef|
+    chef.run_list = [ "recipe[rubies::default]" ]
+  end
+end
+

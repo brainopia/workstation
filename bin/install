@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ -n "$1" ]
+then
+  berks update $1
+fi
+
+berks install -p vendor/cookbooks
