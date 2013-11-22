@@ -1,7 +1,8 @@
 {
-  'user.name'   => 'brainopia',
-  'user.email'  => 'brainopia@evilmartians.com',
-  'github.user' => 'brainopia'
+  'user.name'    => 'brainopia',
+  'user.email'   => 'brainopia@evilmartians.com',
+  'github.user'  => 'brainopia',
+  'push.default' => 'simple'
 }
 .each do |setting, value|
   execute "git #{setting}" do
