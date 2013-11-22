@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 echo -n "Enter password (if needed): "
 read -s password

@@ -2,7 +2,10 @@
   main::rubygems
   rubies
   main::usability
-  main::applications
+  main::packages
+  main::git
+  main::chef
+  main::ssh
 ]
 .each do |name|
   include_recipe name 

@@ -1,8 +1,5 @@
-execute 'upgrade packages' do
-  command 'yum update -y'
-end
-
 %w[
+  vim
   git
 ]
 .each do |name|

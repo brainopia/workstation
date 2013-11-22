@@ -7,6 +7,12 @@ end
 public_key  = data_bag_item('ssh', 'public_key')['value']
 private_key = decrypt('ssh', 'private_key')['value']
 
+directory "/home/#{node[:user]}/.ssh" do
+  owner node[:user]
+  group node[:user]
+  mode '700'
+end
+
 file "/home/#{node[:user]}/.ssh/id_dsa" do
   content private_key
   owner node[:user]
@@ -15,7 +21,7 @@ file "/home/#{node[:user]}/.ssh/id_dsa" do
   action :create_if_missing
 end
 
-file "home/#{node[:user]}/.ssh/id_dsa.pub" do
+file "/home/#{node[:user]}/.ssh/id_dsa.pub" do
   content public_key
   owner node[:user]
   group node[:user]
