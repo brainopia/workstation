@@ -1,6 +1,7 @@
-remote_file '/etc/yum.repos.d/docker-goldmann.repo' do
-  source 'http://goldmann.fedorapeople.org/repos/docker.repo'
-  action :create_if_missing
+apt_repository 'docker' do
+  uri 'http://get.docker.io/ubuntu'
+  key 'https://get.docker.io/gpg'
+  components ['docker', 'main']
 end
 
-package 'docker-io'
+package 'lxc-docker'
