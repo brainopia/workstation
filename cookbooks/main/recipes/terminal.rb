@@ -8,7 +8,7 @@ directory "/home/#{node[:user]}/.config/terminator" do
 end
 
 template "/home/#{node[:user]}/.config/terminator/config" do
-  source 'terminator_config'
+  source 'terminator'
   user node[:user]
   group node[:user]
 end
