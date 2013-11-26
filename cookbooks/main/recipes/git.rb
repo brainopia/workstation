@@ -1,8 +1,9 @@
 {
-  'user.name'    => 'brainopia',
-  'user.email'   => 'brainopia@evilmartians.com',
-  'github.user'  => 'brainopia',
-  'push.default' => 'simple'
+  'user.name'         => 'brainopia',
+  'user.email'        => 'brainopia@evilmartians.com',
+  'github.user'       => 'brainopia',
+  'push.default'      => 'simple',
+  'core.excludesfile' => '~/.cvsignore'
 }
 .each do |setting, value|
   execute "git #{setting}" do

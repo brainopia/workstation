@@ -1,11 +1,12 @@
 { 
   "user": "brainopia",
-  "build-essential": { "compiletime": true },
   "chruby_install": {
-    "default_ruby": "ruby 2.1.0-preview1"
+    "default_ruby": "ruby",
+    "auto_upgrade": true,
+    "use_embedded": true
   },
   "rubies": {
-    "list": [ "ruby 2.1.0-preview1" ],
+    "list": [ "ruby 2.0.0-p353" ],
     "install_bundler": true
   },
   "run_list": [ "recipe[main]" ]
