@@ -1,6 +1,0 @@
-set autowrite
-execute pathogen#infect()
-syntax on
-filetype plugin indent on
-
-let g:netrw_liststyle=3
