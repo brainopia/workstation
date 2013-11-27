@@ -1,5 +1,5 @@
 %w[
-  main::rubygems
+  main::ruby
   rubies
   main::usability
   main::packages
