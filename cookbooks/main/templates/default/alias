@@ -1,0 +1,12 @@
+alias g=git
+alias s="g status"
+alias d="g diff"
+alias gc="g commit"
+alias gb="g branch"
+alias gr="g reset"
+alias gl="g pull"
+alias gp="g push"
+alias gal="git add -A"
+alias gca="gc -a"
+alias gco="g checkout"
+alias glg="g log"

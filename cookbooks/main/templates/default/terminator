@@ -18,6 +18,7 @@
     use_system_font = False
     cursor_color = "#002b36"
     foreground_color = "#002b36"
+    login_shell = True
     icon_bell = False
     show_titlebar = False
     copy_on_selection = True
@@ -29,6 +30,7 @@
     use_system_font = False
     cursor_color = "#eee8d5"
     foreground_color = "#eee8d5"
+    login_shell = True
     icon_bell = False
     show_titlebar = False
     copy_on_selection = True

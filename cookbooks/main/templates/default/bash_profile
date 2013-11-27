@@ -1,0 +1,4 @@
+source ~/.bashrc
+source ~/.alias
+
+export EDITOR=vim

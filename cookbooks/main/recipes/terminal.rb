@@ -12,3 +12,15 @@ template "/home/#{node[:user]}/.config/terminator/config" do
   user node[:user]
   group node[:user]
 end
+
+template "/home/#{node[:user]}/.alias" do
+  source 'alias'
+  user node[:user]
+  group node[:user]
+end
+
+template "/home/#{node[:user]}/.bash_profile" do
+  source 'bash_profile'
+  user node[:user]
+  group node[:user]
+end
