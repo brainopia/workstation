@@ -2,7 +2,7 @@
 
 if [ -z "$1" ]
 then
-  sudo DATA_SECRET=$DATA_SECRET /opt/chef/bin/chef-solo -j config/node.json -c config/solo.rb
+  sudo -E /opt/chef/bin/chef-solo -j config/node.json -c config/solo.rb
 else
-  sudo DATA_SECRET=$DATA_SECRET /opt/chef/bin/chef-solo -j config/node.json -c config/solo.rb -o "recipe[$1]"
+  sudo -E /opt/chef/bin/chef-solo -j config/node.json -c config/solo.rb -o "recipe[$1]"
 fi
