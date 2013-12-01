@@ -23,7 +23,6 @@ package 'wmctrl'
 
 shortcuts = [
   ['Skype', 'sh -c "wmctrl -a skype || skype"', '<Super>s'],
-  ['Skype ru', 'sh -c "wmctrl -a skype || skype"', '<Super>ы'],
   ['Chrome', 'sh -c "wmctrl -a chrome || google-chrome"', '<Super>c'],
   ['Terminator', 'sh -c "wmctrl -a @zen || terminator"', '<Super>t']
 ]
