@@ -1,4 +1,7 @@
-source ~/.bashrc
-source ~/.alias
-
 export EDITOR=vim
+export PATH=$PATH:~/code/bin
+
+. ~/.bashrc
+for it in ~/code/autoload/*.sh; do
+  . $it
+done

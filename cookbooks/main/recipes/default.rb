@@ -9,6 +9,7 @@
   main::ssh
   main::applications
   main::terminal
+  main::docker
 ]
 .each do |name|
   include_recipe name 

@@ -5,3 +5,14 @@ apt_repository 'chrome' do
 end
 
 package 'google-chrome-stable'
+package 'imwheel'
+
+file "/home/#{node[:user]}/.imwheelrc" do
+  content <<-END.gsub(/^ {4}/, '')
+    "^google-chrome$"
+      None, Up, Button4, 2
+      None, Down, Button5, 2
+  END
+  user node[:user]
+  group node[:user]
+end

@@ -1,7 +1,9 @@
 rails_apps = "/home/#{node[:user]}/code/rails"
 oms_path = "/home/#{node[:user]}/code/rails/oms-oxyetb" 
 
-directory rails_apps
+directory rails_apps do
+  user node[:user]
+end
 
 git oms_path do
   repository "git@github.com:evilmartians/ohmystats-oxyetb.git"
