@@ -15,3 +15,18 @@ file "/home/#{node[:user]}/.pryrc" do
   owner node[:user]
   group node[:user]
 end
+
+directory "/home/#{node[:user]}/.bundle" do
+  owner node[:user]
+  group node[:user]
+end
+
+file "/home/#{node[:user]}/.bundle/config" do
+  content <<-END.gsub(/^ {4}/, '')
+    ---
+    BUNDLE_PATH: .bundle
+    BUNDLE_DISABLE_SHARED_GEMS: '1'
+  END
+  owner node[:user]
+  group node[:user]
+end
