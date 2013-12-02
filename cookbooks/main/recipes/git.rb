@@ -1,3 +1,11 @@
+file "/home/#{node[:user]}/.cvsignore" do
+  content <<-END.gsub(/^ {4}/, '')
+    .bundle
+  END
+  owner node[:user]
+  group node[:user]
+end
+
 {
   'user.name'         => 'brainopia',
   'user.email'        => 'brainopia@evilmartians.com',
