@@ -5,3 +5,5 @@ apt_repository 'docker' do
 end
 
 package 'lxc-docker'
+
+execute 'service docker start'
