@@ -14,7 +14,7 @@ execute 'docker pull johncosta/redis'
 execute 'docker pull jrwyatt/cassandra2'
 
 bash 'bundle' do
-  code 'bundle --path=.bundle --binstubs=bin'
+  code 'bundle --path=.bundle'
   cwd oms_path
   flags	'--login'
   user node[:user]
