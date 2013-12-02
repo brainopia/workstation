@@ -10,3 +10,5 @@ alias gal="git add -A"
 alias gca="gc -a"
 alias gco="g checkout"
 alias glg="g log"
+
+alias doc="sudo docker"
