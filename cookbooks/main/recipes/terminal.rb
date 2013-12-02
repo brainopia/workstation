@@ -56,3 +56,10 @@ template "/home/#{node[:user]}/.bash_profile" do
   owner node[:user]
   group node[:user]
 end
+
+remote_file "/home/#{node[:user]}/code/bin/pipework" do
+  source 'https://raw.github.com/jpetazzo/pipework/master/pipework'
+  owner node[:user]
+  group node[:user]
+  mode '755'
+end

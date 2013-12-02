@@ -11,7 +11,7 @@ git oms_path do
 end
 
 execute 'docker pull johncosta/redis'
-execute 'docker pull jrwyatt/cassandra2'
+execute 'docker pull brainopia/cassandra'
 
 bash 'bundle' do
   code 'bundle --path=.bundle'
