@@ -12,6 +12,7 @@ end
 
 execute 'docker pull johncosta/redis'
 execute 'docker pull brainopia/cassandra'
+execute 'docker pull ehazlett/elasticsearch'
 
 bash 'bundle' do
   code 'bundle --path=.bundle'
