@@ -22,9 +22,9 @@ gsetting 'org.gnome.desktop.interface', 'text-scaling-factor' , 1.4
 package 'wmctrl'
 
 shortcuts = [
-  ['Skype', 'sh -c "wmctrl -a skype || skype"', '<Super>s'],
-  ['Chrome', 'sh -c "wmctrl -a chrome || google-chrome"', '<Super>c'],
-  ['Terminator', 'sh -c "wmctrl -a @zen || terminator"', '<Super>t']
+  ['Skype', 'sh -c "wmctrl -a skype || skype"', '<Alt>s'],
+  ['Chrome', 'sh -c "wmctrl -a chrome || google-chrome"', '<Alt>d'],
+  ['Terminator', 'sh -c "wmctrl -a @zen || terminator"', '<Alt>f']
 ]
 
 paths = shortcuts.size.times.map do |i|

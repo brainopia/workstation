@@ -4,6 +4,8 @@
   focus = system
   title_transmit_bg_color = "#d30102"
 [keybindings]
+  next_tab = <Alt>Right
+  prev_tab = <Alt>Left
   switch_to_tab_6 = <Alt>6
   switch_to_tab_4 = <Alt>4
   switch_to_tab_5 = <Alt>5
