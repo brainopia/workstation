@@ -21,3 +21,9 @@ remote_file "/home/#{node[:user]}/.vim/autoload/pathogen.vim" do
   group node[:user]
   action :create_if_missing
 end
+
+git "/home/#{node[:user]}/.vim/bundle/nerdtree" do
+  repository 'https://github.com/scrooloose/nerdtree.git'
+  user node[:user]
+  group node[:user]
+end
