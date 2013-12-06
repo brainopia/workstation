@@ -7,4 +7,13 @@ set expandtab
 set tabstop=2 shiftwidth=2 softtabstop=2
 set autoindent
 
+set pastetoggle=<F2>
+
 map <C-n> :NERDTreeToggle<CR>
+
+function! StartUp()
+    if 0 == argc()
+        NERDTree
+    end
+endfunction
+autocmd VimEnter * call StartUp()
