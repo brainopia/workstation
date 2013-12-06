@@ -1,7 +1,7 @@
 alias g=git
 alias s="g status"
 alias d="g diff"
-alias gc="g commit"
+alias gc="g commit --verbose"
 alias gb="g branch"
 alias gr="g reset"
 alias gl="g pull"
