@@ -27,3 +27,9 @@ git "/home/#{node[:user]}/.vim/bundle/nerdtree" do
   user node[:user]
   group node[:user]
 end
+
+git "/home/#{node[:user]}/.vim/bundle/ctrlp" do
+  repository 'https://github.com/kien/ctrlp.vim.git'
+  user node[:user]
+  group node[:user]
+end
