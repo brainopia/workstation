@@ -10,7 +10,7 @@ git oms_path do
   user node[:user]
 end
 
-execute 'docker pull wasabeef/redis'
+execute 'docker pull jllopis/redis'
 execute 'docker pull brainopia/cassandra'
 execute 'docker pull ehazlett/elasticsearch'
 
