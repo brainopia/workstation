@@ -8,6 +8,10 @@ end
 synclient 'touchpad tap', TapButton1: 1, TapButton2: 3, TapButton3: 2
 synclient 'natural scrolling', VertScrollDelta: -77, HorizScrollDelta: -77
 synclient 'less sensitive tap', FingerHigh: 3
+synclient 'disable tap and drag', TapAndDragGesture: 0
+synclient 'less sensitive motion', PressureMotionMinZ: 40
+synclient 'detect palm', PalmDetect: 0
+
 
 def gsetting(scheme, key, value)
   bash key do
