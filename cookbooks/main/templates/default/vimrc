@@ -7,6 +7,9 @@ set expandtab
 set tabstop=2 shiftwidth=2 softtabstop=2
 set autoindent
 
+" prevent delaying some keybindings (eg, O)
+set ttimeoutlen=100
+
 set pastetoggle=<F2>
 
 map <C-n> :NERDTreeToggle<CR>
