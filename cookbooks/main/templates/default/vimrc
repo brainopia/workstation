@@ -12,6 +12,7 @@ set ttimeoutlen=100
 
 set pastetoggle=<F2>
 
+let NERDTreeAutoDeleteBuffer=1
 map <C-n> :NERDTreeToggle<CR>
 
 function! StartUp()
