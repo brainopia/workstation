@@ -26,7 +26,7 @@ gsetting 'org.gnome.desktop.interface', 'text-scaling-factor' , 1.4
 package 'wmctrl'
 
 shortcuts = [
-  ['Skype', 'sh -c "wmctrl -a skype || skype"', '<Alt>s'],
+  ['Skype', 'sh -c "wmctrl -a skype || PULSE_LATENCY_MSEC=30 skype"', '<Alt>s'],
   ['Chrome', 'sh -c "wmctrl -a chrome || google-chrome"', '<Alt>d'],
   ['Terminator', 'sh -c "wmctrl -a @zen || terminator"', '<Alt>f']
 ]
