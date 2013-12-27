@@ -33,3 +33,9 @@ git "/home/#{node[:user]}/.vim/bundle/ctrlp" do
   user node[:user]
   group node[:user]
 end
+
+git "/home/#{node[:user]}/.vim/bundle/vim-slim" do
+  repository 'https://github.com:slim-template/vim-slim.git'
+  user node[:user]
+  group node[:user]
+end
