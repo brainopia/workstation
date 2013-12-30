@@ -2,8 +2,15 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
+set encoding=utf-8
 set nobackup
 set autowrite
+
+set incsearch
+set ignorecase
+
+set mouse=a
+set scrolloff=5
 
 set expandtab
 set tabstop=2 shiftwidth=2 softtabstop=2
