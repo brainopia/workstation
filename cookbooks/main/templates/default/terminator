@@ -1,6 +1,5 @@
 [global_config]
   window_state = fullscreen
-  hide_from_taskbar = True
   focus = system
   title_transmit_bg_color = "#d30102"
 [keybindings]
