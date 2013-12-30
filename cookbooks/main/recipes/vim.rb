@@ -1,4 +1,4 @@
-package 'vim'
+package 'vim-gnome'
 
 template '/etc/vim/vimrc.local' do
   source 'vimrc'
@@ -35,7 +35,7 @@ git "/home/#{node[:user]}/.vim/bundle/ctrlp" do
 end
 
 git "/home/#{node[:user]}/.vim/bundle/vim-slim" do
-  repository 'https://github.com:slim-template/vim-slim.git'
+  repository 'https://github.com/slim-template/vim-slim.git'
   user node[:user]
   group node[:user]
 end
