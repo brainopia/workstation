@@ -17,6 +17,6 @@ execute 'docker pull ehazlett/elasticsearch'
 bash 'bundle' do
   code 'bundle --path=.bundle'
   cwd oms_path
-  flags	'--login'
+  flags '--login'
   user node[:user]
 end
