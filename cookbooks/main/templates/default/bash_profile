@@ -1,5 +1,6 @@
 export EDITOR=vim
 export PATH=$PATH:~/code/bin
+HISTFILESIZE=10000
 
 . ~/.bashrc
 for it in ~/code/autoload/*.sh; do
