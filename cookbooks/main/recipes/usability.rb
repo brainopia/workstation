@@ -10,7 +10,7 @@ synclient 'natural scrolling', VertScrollDelta: -77, HorizScrollDelta: -77
 synclient 'less sensitive tap', FingerHigh: 3
 synclient 'disable tap and drag', TapAndDragGesture: 0
 synclient 'less sensitive motion', PressureMotionMinZ: 40
-synclient 'detect palm', PalmDetect: 0
+synclient 'detect palm', PalmDetect: 1
 
 
 def gsetting(scheme, key, value)
