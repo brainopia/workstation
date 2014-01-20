@@ -33,3 +33,10 @@ autocmd VimEnter * call StartUp()
 
 " select last pasted or selected text (with appropriate mode)
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
+
+let g:airline_powerline_fonts = 1
+
+set t_Co=16
+set background=light
+colorscheme solarized
+

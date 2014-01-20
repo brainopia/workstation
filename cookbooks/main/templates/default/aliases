@@ -12,3 +12,9 @@ alias gco="g checkout"
 alias glg="g log"
 
 alias doc="sudo docker"
+
+alias b="bundle"
+alias be="bundle exec"
+alias bu="bundle update"
+
+alias ls='ls --hide=*~ --color'
