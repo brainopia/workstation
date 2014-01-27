@@ -57,6 +57,15 @@ template "/home/#{node[:user]}/.bash_profile" do
   group node[:user]
 end
 
+file "/home/#{node[:user]}/.ssh/config" do
+  content <<-FILE.gsub(/^ {4}/, '')
+    ServerAliveInterval 15
+    ServerAliveCountMax 3
+  FILE
+  owner node[:user]
+  group node[:user]
+end
+
 remote_file "/home/#{node[:user]}/code/bin/pipework" do
   source 'https://raw.github.com/jpetazzo/pipework/master/pipework'
   owner node[:user]
