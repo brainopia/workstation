@@ -43,6 +43,9 @@ end
   slim-template/vim-slim
   bling/vim-airline
   altercation/vim-colors-solarized
+  kchmck/vim-coffee-script
+  tpope/vim-fugitive
+  drn/zoomwin-vim
 ].each do |repo|
   name = repo.split('/').last
   git "/home/#{node[:user]}/.vim/bundle/#{name}" do

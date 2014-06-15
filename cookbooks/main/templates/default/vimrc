@@ -4,7 +4,8 @@ filetype plugin indent on
 
 set encoding=utf-8
 set nobackup
-set autowrite
+set autowriteall
+set bh=hide " also enables autowrite for ctrlp
 
 set incsearch
 set ignorecase
