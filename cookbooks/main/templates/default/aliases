@@ -11,7 +11,7 @@ alias gca="gc -a"
 alias gco="g checkout"
 alias glg="g log"
 
-alias doc="sudo docker"
+alias doc=docker
 
 alias b="bundle"
 alias be="bundle exec"
