@@ -46,6 +46,7 @@ end
   kchmck/vim-coffee-script
   tpope/vim-fugitive
   drn/zoomwin-vim
+  rking/ag.vim
 ].each do |repo|
   name = repo.split('/').last
   git "/home/#{node[:user]}/.vim/bundle/#{name}" do
