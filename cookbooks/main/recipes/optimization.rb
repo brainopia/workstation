@@ -1,7 +1,9 @@
+package 'zram-config'
+
 file '/etc/sysctl.d/60-optimization.conf' do
   content <<-END.gsub(/^ {4}/, '')
-    vm.swappiness = 10
-    vm.dirty_writeback_centisecs = 6000
+    vm.swappiness = 20
+    vm.dirty_writeback_centisecs = 3000
   END
 end
 

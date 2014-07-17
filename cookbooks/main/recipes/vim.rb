@@ -47,6 +47,7 @@ end
   tpope/vim-fugitive
   drn/zoomwin-vim
   rking/ag.vim
+  fatih/vim-go
 ].each do |repo|
   name = repo.split('/').last
   git "/home/#{node[:user]}/.vim/bundle/#{name}" do
