@@ -6,7 +6,7 @@ end
 
 %w[
   ~/.vim/autoload
-  ~/.vim/bundle
+  ~/.vim/plugged
   ~/.fonts
   ~/.config/fontconfig/conf.d
 ].each do |path|
@@ -20,7 +20,7 @@ end
 
 {
   '~/.vim/autoload' =>
-  'https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim',
+  'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim',
 
   '~/.fonts' =>
   'https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf',
@@ -33,26 +33,6 @@ end
   remote_file path do
     source from
     owner node[:user]
-    group node[:user]
-  end
-end
-
-%w[
-  scrooloose/nerdtree
-  kien/ctrlp.vim
-  slim-template/vim-slim
-  bling/vim-airline
-  altercation/vim-colors-solarized
-  kchmck/vim-coffee-script
-  tpope/vim-fugitive
-  drn/zoomwin-vim
-  rking/ag.vim
-  fatih/vim-go
-].each do |repo|
-  name = repo.split('/').last
-  git "/home/#{node[:user]}/.vim/bundle/#{name}" do
-    repository "https://github.com/#{repo}.git"
-    user node[:user]
     group node[:user]
   end
 end

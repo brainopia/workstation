@@ -1,4 +1,20 @@
-execute pathogen#infect()
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdtree'
+Plug 'kien/ctrlp.vim'
+Plug 'slim-template/vim-slim'
+Plug 'bling/vim-airline'
+Plug 'altercation/vim-colors-solarized'
+Plug 'kchmck/vim-coffee-script'
+Plug 'tpope/vim-fugitive'
+Plug 'drn/zoomwin-vim'
+Plug 'rking/ag.vim'
+Plug 'fatih/vim-go'
+Plug 'junegunn/vim-easy-align'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+call plug#end()
+
 syntax on
 filetype plugin indent on
 
@@ -42,3 +58,10 @@ set background=light
 colorscheme solarized
 
 let g:go_disable_autoinstall = 1
+let g:ctrlp_working_path_mode = 'ra'
+
+" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+vmap <Enter> <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
