@@ -1,5 +1,3 @@
-package 'zram-config'
-
 file '/etc/sysctl.d/60-optimization.conf' do
   content <<-END.gsub(/^ {4}/, '')
     vm.swappiness = 40
