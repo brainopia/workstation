@@ -28,6 +28,7 @@ file "/home/#{node[:user]}/.bundle/config" do
   content <<-END.gsub(/^ {4}/, '')
     ---
     BUNDLE_PATH: .bundle
+    BUNDLE_DISABLE_SHARED_GEMS: 0
   END
   owner node[:user]
   group node[:user]
@@ -39,17 +40,5 @@ remote_file "/home/#{node[:user]}/code/ruby/debundle.rb" do
   group node[:user]
 end
 
-bash 'install gems' do
-  user node[:user]
-  flags '--login'
-  code <<-SH
-    source /usr/local/share/chruby/chruby.sh
-    chruby ruby
-    gem install pry-doc pry-docmore pry-editline \
-                pry-byebug awesome_print \
-                pry-pretty-numeric bond \
-                pry-rescue pry-stack_explorer \
-                pry-remote pry-vterm_aliases \
-                pry-syntax-hacks
-  SH
-end
+include_recipe 'rubies'
+include_recipe 'main::gems'

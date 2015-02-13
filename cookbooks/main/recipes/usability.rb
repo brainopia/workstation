@@ -44,4 +44,3 @@ paths.each.with_index do |path, i|
   gsetting scheme, 'command', shortcut[1]
   gsetting scheme, 'binding', shortcut[2]
 end
-

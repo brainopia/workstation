@@ -10,9 +10,11 @@ Plug 'drn/zoomwin-vim'
 Plug 'rking/ag.vim'
 Plug 'fatih/vim-go'
 Plug 'junegunn/vim-easy-align'
+Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-rails'
 call plug#end()
 
 syntax on
@@ -20,6 +22,7 @@ filetype plugin indent on
 
 set encoding=utf-8
 set nobackup
+set noswapfile
 set autowriteall
 set bh=hide " also enables autowrite for ctrlp
 
@@ -60,8 +63,25 @@ colorscheme solarized
 let g:go_disable_autoinstall = 1
 let g:ctrlp_working_path_mode = 'ra'
 
+" disable ex mode shortcut
+nnoremap Q <nop>
+" disable man page shortcut
+nnoremap K <nop>
+
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
 vmap <Enter> <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" Rspec shortcuts
+map rsf :call RunCurrentSpecFile()<CR>
+map rss :call RunNearestSpec()<CR>
+map rsl :call RunLastSpec()<CR>
+
+" ctrl-s shortcut to save files
+nnoremap <silent> <C-S> :<C-u>confirm write<CR>
+inoremap <c-s> <Esc>:confirm write<CR>
+
+" exit shortcut
+map <c-q> :qa<CR>

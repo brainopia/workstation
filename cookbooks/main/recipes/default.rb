@@ -1,7 +1,6 @@
 %w[
   main::optimization
   main::ruby
-  rubies
   main::usability
   main::packages
   main::vim
