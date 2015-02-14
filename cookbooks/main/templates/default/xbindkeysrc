@@ -1,0 +1,13 @@
+# disable ctrl+scroll to prevent accidental zoom in chrome
+"/bin/true"
+  Control + b:5 + release
+"/bin/true"
+  Control + b:4 + release
+
+# shortcuts
+"wmctrl -xa terminator.Terminator || terminator"
+  alt + f
+"wmctrl -xa Chromium.Chromium || chromium"
+  alt + d
+"wmctrl -xa skype.Skype || PULSE_LATENCY_MSEC=30 skype"
+  alt + s
