@@ -1,25 +1,25 @@
-{
-  "sources": {
-    "rubies": {
-      "locked_version": "0.1.0"
-    },
-    "build-essential": {
-      "locked_version": "1.4.2"
-    },
-    "chruby_install": {
-      "locked_version": "0.1.1"
-    },
-    "ruby_install": {
-      "locked_version": "0.1.0"
-    },
-    "ark": {
-      "locked_version": "0.4.0"
-    },
-    "apt": {
-      "locked_version": "2.3.0"
-    },
-    "yum": {
-      "locked_version": "2.4.2"
-    }
-  }
-}
+DEPENDENCIES
+  rubies
+
+GRAPH
+  7-zip (1.0.2)
+    windows (>= 1.2.2)
+  apt (2.6.1)
+  ark (0.9.0)
+    7-zip (>= 0.0.0)
+    windows (>= 0.0.0)
+  build-essential (2.1.3)
+  chef_handler (1.1.6)
+  chruby_install (0.1.1)
+    build-essential (>= 0.0.0)
+  rubies (0.1.0)
+    build-essential (>= 0.0.0)
+    chruby_install (>= 0.0.0)
+    ruby_install (>= 0.0.0)
+  ruby_install (1.0.4)
+    apt (>= 0.0.0)
+    ark (>= 0.0.0)
+    yum (>= 0.0.0)
+  windows (1.36.1)
+    chef_handler (>= 0.0.0)
+  yum (3.5.2)

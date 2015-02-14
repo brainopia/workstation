@@ -1,16 +1,25 @@
-def synclient(name, settings)
-  arguments = settings.map {|key, value| "#{key}=#{value}" }.join(' ')
-  execute name do
-    command "synclient #{arguments}"
-  end
+synclient = {
+  TapButton1: 1,          # touchpad tap
+  TapButton2: 3,
+  TapButton3: 2,
+  VertScrollDelta: -77,   # natural scrolling
+  HorizScrollDelta: -77,
+  FingerHigh: 3,          # less sensitive tap
+  TapAndDragGesture: 0,   # disable tap and drag
+  PressureMotionMinZ: 40, # less sensitive motion
+  PalmDetect: 1           # detect palm
+}
+
+file "/home/#{node[:user]}/.xinitrc" do
+  action :create
+  user node[:user]
+  group node[:user]
+  content synclient.map {|key, value| "synclient #{key}=#{value}" }.join("\n")
 end
 
-synclient 'touchpad tap', TapButton1: 1, TapButton2: 3, TapButton3: 2
-synclient 'natural scrolling', VertScrollDelta: -77, HorizScrollDelta: -77
-synclient 'less sensitive tap', FingerHigh: 3
-synclient 'disable tap and drag', TapAndDragGesture: 0
-synclient 'less sensitive motion', PressureMotionMinZ: 40
-synclient 'detect palm', PalmDetect: 1
+execute 'apply synclient' do
+  command "bash /home/#{node[:user]}/.xinitrc"
+end
 
 
 def gsetting(scheme, key, value)

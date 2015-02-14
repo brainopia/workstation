@@ -14,6 +14,12 @@ file "/home/#{node[:user]}/.pryrc" do
   content <<-CODE
     require_relative 'code/ruby/debundle'
     Pry.config.prompt = Pry::SIMPLE_PROMPT
+    if defined?(PryByebug)
+      Pry.commands.alias_command 'c', 'continue'
+      Pry.commands.alias_command 's', 'step'
+      Pry.commands.alias_command 'n', 'next'
+      Pry.commands.alias_command 'f', 'finish'
+    end
   CODE
   owner node[:user]
   group node[:user]

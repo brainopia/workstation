@@ -1,7 +1,7 @@
 %w[
-  curl
+  wget
   git
-  silversearcher-ag
+  the_silver_searcher
 ]
 .each do |name|
   package name

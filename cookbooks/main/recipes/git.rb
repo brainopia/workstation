@@ -1,8 +1,6 @@
 file "/home/#{node[:user]}/.cvsignore" do
   content <<-END.gsub(/^ {4}/, '')
     .bundle
-    *.swp
-    *.swo
   END
   owner node[:user]
   group node[:user]

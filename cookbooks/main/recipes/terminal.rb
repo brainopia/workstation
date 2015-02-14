@@ -1,4 +1,3 @@
-execute 'add-apt-repository ppa:gnome-terminator'
 package 'terminator'
 
 directory "/home/#{node[:user]}/.config/terminator" do
@@ -56,6 +55,8 @@ template "/home/#{node[:user]}/.bash_profile" do
   owner node[:user]
   group node[:user]
 end
+
+__END__
 
 file "/home/#{node[:user]}/.ssh/config" do
   content <<-FILE.gsub(/^ {4}/, '')

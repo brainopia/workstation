@@ -1,6 +1,4 @@
-package 'vim-gnome'
-
-template '/etc/vim/vimrc.local' do
+template '/etc/vimrc' do
   source 'vimrc'
 end
 
