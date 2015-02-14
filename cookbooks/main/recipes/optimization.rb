@@ -6,3 +6,7 @@ file '/etc/sysctl.d/60-optimization.conf' do
 end
 
 execute 'sysctl -p /etc/sysctl.d/60-optimization.conf'
+
+
+__END__
+- switch to deadline scheduler
