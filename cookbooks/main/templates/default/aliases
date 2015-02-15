@@ -13,8 +13,10 @@ alias glg="g log"
 
 alias doc=docker
 
-alias b="bundle"
+alias b=bundle
 alias be="bundle exec"
 alias bu="bundle update"
 
 alias ls='ls --hide=*~ --color'
+
+alias vi=vim

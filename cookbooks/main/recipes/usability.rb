@@ -14,8 +14,10 @@ gsetting 'org.gnome.settings-daemon.plugins.mouse', 'active', false
 # gnome forcefully overwrites xorg keyboard settings without ability to disable it
 # gsetting 'org.gnome.settings-daemon.plugins.keyboard', 'active', false
 # therefore we duplicate xorg keyboard settings with gnome
-gsetting 'org.gnome.desktop.input-sources', 'xkb-options', '["grp:alt_shift_toggle"]'
-gsetting 'org.gnome.desktop.input-sources', 'sources', '[("xkb","us"), ("xkb","ru")]'
+gsetting 'org.gnome.desktop.input-sources', 
+  'xkb-options', '["grp:alt_shift_toggle", "ctrl:nocaps"]'
+gsetting 'org.gnome.desktop.input-sources', 
+  'sources', '[("xkb","us"), ("xkb","ru")]'
 
 # setup touchpad
 template '/etc/X11/xorg.conf.d/50-touchpad_and_keyboard.conf' do
