@@ -7,7 +7,6 @@ Plug 'slim-template/vim-slim'
 Plug 'bling/vim-airline'
 Plug 'altercation/vim-colors-solarized'
 Plug 'kchmck/vim-coffee-script'
-Plug 'tpope/vim-fugitive'
 Plug 'drn/zoomwin-vim'
 Plug 'rking/ag.vim'
 Plug 'fatih/vim-go'
@@ -17,6 +16,8 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rails'
+Plug 'tpope/vim-fugitive'
+Plug 'idanarye/vim-merginal'
 call plug#end()
 
 syntax on
@@ -26,6 +27,7 @@ set encoding=utf-8
 set nobackup
 set noswapfile
 set autowriteall
+set autoread
 set bh=hide " also enables autowrite for ctrlp
 
 set incsearch
