@@ -18,6 +18,8 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-fugitive'
 Plug 'idanarye/vim-merginal'
+Plug 'kana/vim-textobj-user'
+Plug 'nelstrom/vim-textobj-rubyblock'
 call plug#end()
 
 syntax on
