@@ -19,4 +19,5 @@ alias bu="bundle update"
 
 alias ls='ls --hide=*~ --color'
 
-alias vi=vim
+alias vi=nvim
+alias vim=nvim
