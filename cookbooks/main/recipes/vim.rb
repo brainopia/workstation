@@ -37,5 +37,5 @@ end
 
 bash 'install vim plugins' do
   user node[:user]
-  code 'vim +PlugInstall +qa'
+  code '\vim +PlugInstall +qa'
 end
