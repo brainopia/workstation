@@ -1,13 +1,18 @@
+let mapleader = ' '
+
+autocmd!
 set nocompatible
 
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'kien/ctrlp.vim'
+Plug 'tacahiroy/ctrlp-funky'
 Plug 'slim-template/vim-slim'
-Plug 'bling/vim-airline'
 Plug 'altercation/vim-colors-solarized'
+Plug 'itchyny/lightline.vim'
+Plug 'bling/vim-bufferline'
 Plug 'kchmck/vim-coffee-script'
-Plug 'drn/zoomwin-vim'
+" Plug 'drn/zoomwin-vim'
 Plug 'rking/ag.vim'
 Plug 'fatih/vim-go'
 Plug 'junegunn/vim-easy-align'
@@ -20,10 +25,13 @@ Plug 'tpope/vim-fugitive'
 Plug 'idanarye/vim-merginal'
 Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'
+" Plug 'sjl/gundo.vim'
 call plug#end()
 
 syntax on
 filetype plugin indent on
+
+runtime macros/matchit.vim
 
 set encoding=utf-8
 set nobackup
@@ -32,6 +40,7 @@ set autowriteall
 set autoread
 set bh=hide " also enables autowrite for ctrlp
 
+set hlsearch
 set incsearch
 set ignorecase
 
@@ -46,8 +55,6 @@ set backspace=indent,eol,start
 " prevent delaying some keybindings (eg, O)
 set ttimeoutlen=100
 
-set pastetoggle=<F2>
-
 let NERDTreeAutoDeleteBuffer=1
 map <C-n> :NERDTreeToggle<CR>
 
@@ -61,14 +68,17 @@ autocmd VimEnter * call StartUp()
 " select last pasted or selected text (with appropriate mode)
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
-let g:airline_powerline_fonts = 1
-
-set t_Co=16
 set background=light
 colorscheme solarized
+autocmd VimEnter * colorscheme solarized
 
 let g:go_disable_autoinstall = 1
+
 let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_funky_syntax_highlight = 1
+nnoremap <Leader>f :CtrlPFunky<Cr>
+nnoremap <Leader>p :CtrlP<Cr>
+nnoremap <Leader>b :CtrlPBuffer<Cr>
 
 " disable ex mode shortcut
 nnoremap Q <nop>
@@ -82,13 +92,92 @@ vmap <Enter> <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " Rspec shortcuts
-map rsf :call RunCurrentSpecFile()<CR>
-map rss :call RunNearestSpec()<CR>
-map rsl :call RunLastSpec()<CR>
+nmap rsf :call RunCurrentSpecFile()<CR>
+nmap rss :call RunNearestSpec()<CR>
+nmap rsl :call RunLastSpec()<CR>
+let g:rspec_command = "!bundle exec rspec {spec}"
+
+" zoom-in
+nnoremap <silent> <c-w>o :only<CR>
 
 " ctrl-s shortcut to save files
 nnoremap <silent> <C-S> :<C-u>confirm write<CR>
 inoremap <c-s> <Esc>:confirm write<CR>
+" run last bash command
+nnoremap <Leader>r :!!<CR>
+
+" write file with sudo
+cnoremap w!! %!sudo tee > /dev/null %
 
 " exit shortcut
-map <c-q> :qa<CR>
+nnoremap <c-q> :qa!<CR>
+inoremap <c-q> <Esc>:qa!<CR>
+cnoremap <c-q> qa!<CR>
+
+set undofile            " Save undo's after file closes
+set undodir=~/.vim/undo " where to save undo histories
+set undolevels=1000     " How many undos
+set undoreload=10000    " number of lines to save for undo
+
+set vb " disable alert sound
+
+" Default shell and shell syntax and source ~/.bash_profile
+set shell=/bin/bash\ --login
+let g:is_bash=1
+
+" Improve vim's scrolling speed
+set ttyfast
+" set ttyscroll=3
+set lazyredraw
+
+set ls=2 " show a status line even if there's only one window
+set wildmenu " show completion on the mode-line
+set autoread
+
+augroup reload_vimrc " {
+  autocmd!
+  autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END " }
+
+if has('nvim')
+  " terminal normal mode shortcut
+  tnoremap <Esc> <c-\><c-n>
+  tnoremap <c-[> <c-\><c-n>
+end
+
+" nnoremap <c-u> :GundoToggle<CR>
+
+set laststatus=2
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ 'active': {
+      \   'left': [ [ 'mode' ], [ 'fugitive', 'filename' ] ],
+		  \   'right': [ [ 'lineinfo' ], [ 'percent' ] ]
+      \ },
+      \ 'inactive': { 'right': [] },
+      \ 'component_function': {
+      \   'fugitive': 'MyFugitive',
+      \   'filename': 'MyFilename',
+      \   'mode': 'MyMode'
+      \ }
+      \ }
+autocmd VimEnter * call lightline#highlight()
+
+function! MyFugitive()
+  if &ft !~? 'nerdtree\|gundo' && exists("*fugitive#head") && winwidth(0) > 60
+    let _ = fugitive#head()
+    return strlen(_) ? _ : ''
+  endif
+  return ''
+endfunction
+
+function! MyMode()
+  return winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
+
+function! MyFilename()
+  if &ft !~? 'nerdtree\|gundo'
+    return '' != expand('%:t') ? expand('%:t') : '[No Name]'
+  endif
+  return ''
+endfunction
